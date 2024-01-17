@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev.mvc.admin.AdminDAOInter">
+<!-- 관리자 계정 생성 -->
+<insert id="admin_create" parameterType="dev.mvc.admin.AdminVO" >
+INSERT INTO CheckSched_admin(adminno, id, passwd, mname, mdate)
+VALUES(CheckSched_admin_seq.nextval, #{id}, #{passwd}, #{mname}, sysdate)
+</insert>
+<!-- 관리자 로그인 -->
+<select id="admin_login" resultType="int" parameterType="dev.mvc.admin.AdminVO">
+SELECT COUNT(*) as cnt
+FROM checksched_admin
+WHERE id = #{id} AND passwd = #{passwd}
+</select>
+<!-- 회원 정보 -->
+<select id="read_by_id" resultType="dev.mvc.admin.AdminVO" parameterType="String">
+SELECT adminno, id, passwd, mname, mdate
+FROM checksched_admin
+WHERE id = #{id}
+</select>
+</mapper>
