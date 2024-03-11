@@ -1,8 +1,4 @@
-a = {'key1': {}}
-b = {'key2': 1}
-c = {'key2-2': 1}
-a['key1'] = b
-a['key1'] = c
+a = {1:[11,11], 2:22, 3:33}
 
-
-print(a)
+for key, value in a.items():
+    print(key, value)
