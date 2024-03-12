@@ -1,3 +1,3 @@
-a = True
-if a:
-    print(1)
+import math
+
+print(round(2.54))
