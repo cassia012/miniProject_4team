@@ -1,3 +1,3 @@
-import math
+explode = [1 for _ in range(10)]
 
-print(round(2.54))
+print(explode)
